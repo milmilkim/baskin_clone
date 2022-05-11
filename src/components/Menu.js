@@ -59,91 +59,61 @@ const Menu = () => {
                     <span>아이스크림</span>
                   </li>
                   <li className="gnb_depth2">
-                    <a href="/menu/nutrition_new.php?top=C">
-                      <span>음료</span>
-                    </a>
+                    <span>음료</span>
                   </li>
                   <li className="gnb_depth2">
-                    <a href="/menu/nutrition_new.php?top=D">
-                      <span>커피</span>
-                    </a>
+                    <span>커피</span>
                   </li>
                 </ul>
               </li>
               <li className="gnb_depth1 gnb_event">
                 <div className="gnb_main">
-                  <a href="/event/list.php">
-                    <span>EVENT</span>
-                  </a>
+                  <span>EVENT</span>
                 </div>
                 <ul className="gnb_sub">
                   <li className="gnb_depth2">
-                    <a href="/event/list.php">
-                      <span>진행중이벤트</span>
-                    </a>
+                    <span>진행중이벤트</span>
                   </li>
                   <li className="gnb_depth2">
-                    <a href="/event/winner.php">
-                      <span>당첨자발표</span>
-                    </a>
+                    <span>당첨자발표</span>
                   </li>
                 </ul>
               </li>
               <li className="gnb_depth1 gnb_store">
                 <div className="gnb_main">
-                  <a href="/store/map.php">
-                    <span>STORE</span>
-                  </a>
+                  <span>STORE</span>
                 </div>
                 <ul className="gnb_sub">
                   <li className="gnb_depth2">
-                    <a href="/store/map.php">
-                      <span>매장찾기</span>
-                    </a>
+                    <span>매장찾기</span>
                   </li>
                   <li className="gnb_depth2">
-                    <a href="/customer/ccm.php">
-                      <span>고객센터</span>
-                    </a>
+                    <span>고객센터</span>
                   </li>
                   <li className="gnb_depth2">
-                    <a href="/store/catering2.php">
-                      <span>단체주문</span>
-                    </a>
+                    <span>단체주문</span>
                   </li>
                 </ul>
               </li>
               <li className="gnb_depth1 gnb_about">
                 <div className="gnb_main">
-                  <a href="/about/notice_list.php">
-                    <span>ABOUT</span>
-                  </a>
+                  <span>ABOUT</span>
                 </div>
                 <ul className="gnb_sub">
                   <li className="gnb_depth2">
-                    <a href="/about/notice_list.php">
-                      <span>공지사항</span>
-                    </a>
+                    <span>공지사항</span>
                   </li>
                   <li className="gnb_depth2">
-                    <a href="/about/press_list.php">
-                      <span>보도자료</span>
-                    </a>
+                    <span>보도자료</span>
                   </li>
                   <li className="gnb_depth2">
-                    <a href="/about/jobs.php">
-                      <span>채용정보</span>
-                    </a>
+                    <span>채용정보</span>
                   </li>
                   <li className="gnb_depth2">
-                    <a href="/about/br_system.php">
-                      <span>점포개설문의</span>
-                    </a>
+                    <span>점포개설문의</span>
                   </li>
                   <li className="gnb_depth2">
-                    <a href="/about/contact_us.php">
-                      <span>Contact Us</span>
-                    </a>
+                    <span>Contact Us</span>
                   </li>
                 </ul>
               </li>
