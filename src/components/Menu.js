@@ -1,10 +1,151 @@
 import styled from 'styled-components';
+import gnbMenu from '../assets/img/gnb_menu.png';
+import happyPoint from '../assets/img/img_happypoint_app.jpg';
+import monthly from '../assets/img/img_monthly_fom_220429.png';
 
-const MenuContainer = styled.nav``;
+const MenuContainer = styled.nav`
+  height: 46px;
+  border-top: 1px solid #e2d9d6;
+  .menu__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .gnb_bg {
+      overflow: hidden;
+      position: absolute;
+      top: 185px;
+      left: 0;
+      height: 275px;
+      z-index: 99;
+      min-width: 100%;
+      border-bottom: 1px solid #693337;
+      background-color: #fff;
+
+      div {
+        max-width: 1200px;
+        height: 204px;
+        margin: 0 auto;
+        background: url(${happyPoint}) no-repeat 0 65px;
+      }
+    }
+
+    ul li {
+      float: left;
+      line-height: 46px;
+    }
+
+    .member {
+      float: left;
+
+      span {
+        display: block;
+        height: 46px;
+        background: url(${gnbMenu}) no-repeat;
+        text-indent: -9999em;
+      }
+
+      .login {
+        padding-right: 40px;
+        span {
+          width: 35px;
+          background-position: 0px -1px;
+          cursor: pointer;
+        }
+      }
+
+      .join span {
+        width: 27px;
+        background-position: -97px -1px;
+        cursor: pointer;
+      }
+    }
+
+    .gnb {
+      float: right;
+      z-index: 1000;
+      position: relative;
+
+      .gnb_main span {
+        display: block;
+        font-size: 11px;
+        background: url(${gnbMenu}) no-repeat;
+        line-height: 46px;
+        height: 46px;
+        text-indent: -9999em;
+        cursor: pointer;
+      }
+
+      .gnb_flavor span {
+        background-position: -133px -3px;
+        width: 164px;
+        margin: 0 60px;
+      }
+
+      .gnb_menu .gnb_main span {
+        width: 42px;
+        background-position: -415px -3px;
+        margin: 0 60px;
+      }
+
+      .gnb_nutrition .gnb_main span {
+        width: 105px;
+        background-position: -545px -3px;
+        margin: 0 28px;
+      }
+
+      .gnb_event .gnb_main span {
+        width: 42px;
+        background-position: -737px -3px;
+        margin: 0 60px;
+      }
+
+      .gnb_store .gnb_main span {
+        width: 49px;
+        background-position: -897px -3px;
+        margin: 0 60px;
+      }
+
+      .gnb_about {
+        .gnb_main span {
+          width: 49px;
+          background-position: -1057px -3px;
+          margin-left: 60px;
+        }
+
+        .gnb_sub {
+          margin-left: 50px;
+        }
+      }
+    }
+
+    .gnb_sub {
+      font-size: 14px;
+
+      li {
+        float: none;
+
+        &:first-child {
+          margin-top: 30px;
+        }
+      }
+      span {
+        display: block;
+        text-align: center;
+        color: #948780;
+        cursor: pointer;
+        z-index: 100 !important;
+
+        &:hover {
+          color: #ff75ac;
+        }
+      }
+    }
+  }
+`;
 const Menu = () => {
   return (
     <MenuContainer>
-      <div className="inner">
+      <div className="menu__inner">
         <nav className="member">
           <ul>
             <li className="login">
@@ -16,7 +157,7 @@ const Menu = () => {
           </ul>
         </nav>
 
-        <nav id="gnb">
+        <nav className="gnb">
           <div className="gnb_wrap">
             <ul>
               <li className="gnb_depth1"></li>
@@ -25,7 +166,9 @@ const Menu = () => {
                 <div className="gnb_main">
                   <span>FLAVOR OF THE MONTH</span>
                 </div>
-                <div className="gnb_sub"></div>
+                <div class="gnb_sub">
+                  <img src={monthly} alt="이달의 맛" style={{ marginLeft: '40px', cursor: 'pointer' }} />
+                </div>
               </li>
 
               <li className="gnb_depth1 gnb_menu">
@@ -119,10 +262,10 @@ const Menu = () => {
               </li>
             </ul>
           </div>
-          <div className="gnb_bg">
-            <div></div>
-          </div>
         </nav>
+        <div className="gnb_bg">
+          <div></div>
+        </div>
       </div>
     </MenuContainer>
   );

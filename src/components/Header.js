@@ -13,7 +13,7 @@ const HeaderContainer = styled.header`
   background: url(${background}) 50% 0 repeat-x;
   height: 182px;
 
-  .inner {
+  .header__inner {
     position: relative;
     max-width: 1200px;
     height: 135px;
@@ -54,7 +54,7 @@ const HeaderContainer = styled.header`
 function Header() {
   return (
     <HeaderContainer>
-      <div className="inner">
+      <div className="header__inner">
         <h1 className="logo">배스킨라빈스</h1>
         <SNS style={{ position: 'absolute', top: '50px' }} />
         <nav className="etc">
