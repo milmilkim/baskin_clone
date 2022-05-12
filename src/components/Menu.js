@@ -1,10 +1,186 @@
 import styled from 'styled-components';
+import gnbMenu from '../assets/img/gnb_menu.png';
+import happyPoint from '../assets/img/img_happypoint_app.jpg';
+import monthly from '../assets/img/img_monthly_fom_220429.png';
+import { useCallback, useState } from 'react';
 
-const MenuContainer = styled.nav``;
+const MenuContainer = styled.nav`
+  height: 46px;
+  border-top: 1px solid #e2d9d6;
+  .menu__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    .gnb_bg {
+      overflow: hidden;
+      position: absolute;
+      top: 185px;
+      max-height: 0;
+      left: 0;
+      height: 275px;
+      z-index: 99;
+      min-width: 100%;
+      background-color: #fff;
+      transition: all 500ms ease;
+      border-bottom: 1px solid #3f291a;
+
+      &.open {
+        max-height: 275px;
+        border-top: 1px solid #3f291a;
+      }
+
+      div {
+        max-width: 1200px;
+        height: 204px;
+        margin: 0 auto;
+        background: url(${happyPoint}) no-repeat 0 65px;
+      }
+    }
+
+    ul li {
+      float: left;
+      line-height: 46px;
+    }
+
+    .member {
+      float: left;
+
+      span {
+        display: block;
+        height: 46px;
+        background: url(${gnbMenu}) no-repeat;
+        text-indent: -9999em;
+      }
+
+      .login {
+        padding-right: 40px;
+        span {
+          width: 35px;
+          background-position: 0px -1px;
+          cursor: pointer;
+        }
+      }
+
+      .join span {
+        width: 27px;
+        background-position: -97px -1px;
+        cursor: pointer;
+      }
+    }
+
+    .gnb {
+      float: right;
+      z-index: 1000;
+      position: relative;
+
+      &.open .gnb_sub {
+        height: auto;
+        span {
+          opacity: 1;
+        }
+        img {
+          display: block;
+          animation: fadeIn 500ms ease 300ms;
+          animation-fill-mode: forwards;
+        }
+      }
+
+      .gnb_main span {
+        display: block;
+        font-size: 11px;
+        background: url(${gnbMenu}) no-repeat;
+        line-height: 46px;
+        height: 46px;
+        text-indent: -9999em;
+        cursor: pointer;
+      }
+
+      .gnb_flavor span {
+        background-position: -133px -3px;
+        width: 164px;
+        margin: 0 60px;
+      }
+
+      .gnb_menu .gnb_main span {
+        width: 42px;
+        background-position: -415px -3px;
+        margin: 0 60px;
+      }
+
+      .gnb_nutrition .gnb_main span {
+        width: 105px;
+        background-position: -545px -3px;
+        margin: 0 28px;
+      }
+
+      .gnb_event .gnb_main span {
+        width: 42px;
+        background-position: -737px -3px;
+        margin: 0 60px;
+      }
+
+      .gnb_store .gnb_main span {
+        width: 49px;
+        background-position: -897px -3px;
+        margin: 0 60px;
+      }
+
+      .gnb_about {
+        .gnb_main span {
+          width: 49px;
+          background-position: -1057px -3px;
+          margin-left: 60px;
+        }
+
+        .gnb_sub {
+          margin-left: 50px;
+        }
+      }
+    }
+
+    .gnb_sub {
+      font-size: 14px;
+      overflow: hidden;
+      height: 0px;
+
+      li {
+        float: none;
+
+        &:first-child {
+          margin-top: 30px;
+        }
+      }
+      span {
+        display: block;
+        text-align: center;
+        color: #948780;
+        cursor: pointer;
+        z-index: 100 !important;
+        opacity: 0;
+        transition: all 400ms ease-in;
+        &:hover {
+          color: #ff75ac;
+        }
+      }
+
+      img {
+        display: none;
+        opacity: 0;
+      }
+    }
+  }
+`;
 const Menu = () => {
+  const [isMouseOver, setIsMouseOver] = useState(false);
+
+  const handleOpacity = useCallback(() => {
+    setIsMouseOver((value) => !value);
+  }, []);
+
   return (
     <MenuContainer>
-      <div className="inner">
+      <div className="menu__inner">
         <nav className="member">
           <ul>
             <li className="login">
@@ -16,8 +192,8 @@ const Menu = () => {
           </ul>
         </nav>
 
-        <nav id="gnb">
-          <div className="gnb_wrap">
+        <nav className={`gnb ${isMouseOver ? 'open' : ''}`}>
+          <div className="gnb_wrap" onMouseOver={handleOpacity} onMouseOut={handleOpacity}>
             <ul>
               <li className="gnb_depth1"></li>
 
@@ -25,7 +201,9 @@ const Menu = () => {
                 <div className="gnb_main">
                   <span>FLAVOR OF THE MONTH</span>
                 </div>
-                <div className="gnb_sub"></div>
+                <div className="gnb_sub">
+                  <img src={monthly} alt="이달의 맛" style={{ marginLeft: '40px', cursor: 'pointer' }} />
+                </div>
               </li>
 
               <li className="gnb_depth1 gnb_menu">
@@ -59,100 +237,70 @@ const Menu = () => {
                     <span>아이스크림</span>
                   </li>
                   <li className="gnb_depth2">
-                    <a href="/menu/nutrition_new.php?top=C">
-                      <span>음료</span>
-                    </a>
+                    <span>음료</span>
                   </li>
                   <li className="gnb_depth2">
-                    <a href="/menu/nutrition_new.php?top=D">
-                      <span>커피</span>
-                    </a>
+                    <span>커피</span>
                   </li>
                 </ul>
               </li>
               <li className="gnb_depth1 gnb_event">
                 <div className="gnb_main">
-                  <a href="/event/list.php">
-                    <span>EVENT</span>
-                  </a>
+                  <span>EVENT</span>
                 </div>
                 <ul className="gnb_sub">
                   <li className="gnb_depth2">
-                    <a href="/event/list.php">
-                      <span>진행중이벤트</span>
-                    </a>
+                    <span>진행중이벤트</span>
                   </li>
                   <li className="gnb_depth2">
-                    <a href="/event/winner.php">
-                      <span>당첨자발표</span>
-                    </a>
+                    <span>당첨자발표</span>
                   </li>
                 </ul>
               </li>
               <li className="gnb_depth1 gnb_store">
                 <div className="gnb_main">
-                  <a href="/store/map.php">
-                    <span>STORE</span>
-                  </a>
+                  <span>STORE</span>
                 </div>
                 <ul className="gnb_sub">
                   <li className="gnb_depth2">
-                    <a href="/store/map.php">
-                      <span>매장찾기</span>
-                    </a>
+                    <span>매장찾기</span>
                   </li>
                   <li className="gnb_depth2">
-                    <a href="/customer/ccm.php">
-                      <span>고객센터</span>
-                    </a>
+                    <span>고객센터</span>
                   </li>
                   <li className="gnb_depth2">
-                    <a href="/store/catering2.php">
-                      <span>단체주문</span>
-                    </a>
+                    <span>단체주문</span>
                   </li>
                 </ul>
               </li>
               <li className="gnb_depth1 gnb_about">
                 <div className="gnb_main">
-                  <a href="/about/notice_list.php">
-                    <span>ABOUT</span>
-                  </a>
+                  <span>ABOUT</span>
                 </div>
                 <ul className="gnb_sub">
                   <li className="gnb_depth2">
-                    <a href="/about/notice_list.php">
-                      <span>공지사항</span>
-                    </a>
+                    <span>공지사항</span>
                   </li>
                   <li className="gnb_depth2">
-                    <a href="/about/press_list.php">
-                      <span>보도자료</span>
-                    </a>
+                    <span>보도자료</span>
                   </li>
                   <li className="gnb_depth2">
-                    <a href="/about/jobs.php">
-                      <span>채용정보</span>
-                    </a>
+                    <span>채용정보</span>
                   </li>
                   <li className="gnb_depth2">
-                    <a href="/about/br_system.php">
-                      <span>점포개설문의</span>
-                    </a>
+                    <span>점포개설문의</span>
                   </li>
                   <li className="gnb_depth2">
-                    <a href="/about/contact_us.php">
-                      <span>Contact Us</span>
-                    </a>
+                    <span>Contact Us</span>
                   </li>
                 </ul>
               </li>
             </ul>
           </div>
-          <div className="gnb_bg">
-            <div></div>
-          </div>
         </nav>
+        <div className={`gnb_bg ${isMouseOver ? 'open' : ''}`}>
+          <div></div>
+        </div>
       </div>
     </MenuContainer>
   );
