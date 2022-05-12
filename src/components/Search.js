@@ -5,16 +5,16 @@ import checkOn from '../assets/img/bg_check_on.gif';
 
 const SearchContainer = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   top: 0;
-  position: fixed;
   z-index: 1001;
+  position: absolute;
 
-  .modal__bg {
+  & + .modal__bg {
+    top: 187px;
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
-    height: 100vh;
-    top: 188px;
+    height: ${(props) => props.height};
     z-index: 10;
     position: absolute;
     animation: fadeIn 500ms ease;
@@ -23,7 +23,7 @@ const SearchContainer = styled.div`
 
   .modal {
     position: absolute;
-    top: 189px;
+    top: 186px;
     height: 260px;
     background-color: #fff;
     width: 100%;
@@ -95,7 +95,7 @@ const SearchContainer = styled.div`
           font-size: 13px;
           margin: 10px;
           span {
-            padding-right: 10px;
+            padding: 0 10px 10px 0;
             display: inline-block;
             color: #ff7c98;
             cursor: pointer;
@@ -175,57 +175,60 @@ const SearchContainer = styled.div`
 `;
 const Search = () => {
   return (
-    <SearchContainer>
-      <div className="modal__bg"></div>
-      <div className="modal">
-        <div className="modal__inner">
-          <div className="title">
-            <label htmlFor="title">제품명</label>
-            <select>
-              <option value="">전체</option>
-              {options.map((v, i) => (
-                <option key={i} value={v}>
-                  {v}
-                </option>
-              ))}
-            </select>
-            <input name="title" type="text"></input>
-          </div>
-
-          <div className="hash">
-            <label htmlFor="hash">해시태그</label>
-            <div>
-              <input name="hash" type="text"></input>
-              <dt>자주 찾는 해시태그</dt>
-              <dd>
-                {tags.map((v, i) => (
-                  <span key={i}>#{v}</span>
+    <>
+      <SearchContainer height={`${document.body.scrollHeight - 187}px`}>
+        {/* <SearchContainer height={'100vh'}> */}
+        <div className="modal">
+          <div className="modal__inner">
+            <div className="title">
+              <label htmlFor="title">제품명</label>
+              <select>
+                <option value="">전체</option>
+                {options.map((v, i) => (
+                  <option key={i} value={v}>
+                    {v}
+                  </option>
                 ))}
-              </dd>
+              </select>
+              <input name="title" type="text"></input>
             </div>
-          </div>
 
-          <div className="allergy">
-            <label htmlFor="allergy">알레르기 성분</label>
-
-            <div className="wrapper">
-              <ul>
-                {allergy.map((v, i) => (
-                  <label key={i}>
-                    <input type="checkbox" value={v} />
-                    <span>{v}</span>
-                  </label>
-                ))}
-              </ul>
+            <div className="hash">
+              <label htmlFor="hash">해시태그</label>
+              <div>
+                <input name="hash" type="text"></input>
+                <dt>자주 찾는 해시태그</dt>
+                <dd>
+                  {tags.map((v, i) => (
+                    <span key={i}>#{v}</span>
+                  ))}
+                </dd>
+              </div>
             </div>
-          </div>
 
-          <div className="button">
-            <button>검색</button>
+            <div className="allergy">
+              <label htmlFor="allergy">알레르기 성분</label>
+
+              <div className="wrapper">
+                <ul>
+                  {allergy.map((v, i) => (
+                    <label key={i}>
+                      <input type="checkbox" value={v} />
+                      <span>{v}</span>
+                    </label>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="button">
+              <button>검색</button>
+            </div>
           </div>
         </div>
-      </div>
-    </SearchContainer>
+      </SearchContainer>
+      <div className="modal__bg"></div>
+    </>
   );
 };
 

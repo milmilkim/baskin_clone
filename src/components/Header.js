@@ -13,11 +13,11 @@ import { useState, useCallback } from 'react';
 
 const HeaderContainer = styled.header`
   border-top: 3px solid #ff7c98;
-  position: relative;
 
   background: url(${background}) 50% 0 repeat-x;
   height: 182px;
-  z-index: 90;
+
+  position: relative;
 
   .header__inner {
     position: relative;
