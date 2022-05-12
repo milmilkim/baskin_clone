@@ -2,8 +2,18 @@ import styled from 'styled-components';
 import gnbMenu from '../assets/img/gnb_menu.png';
 import happyPoint from '../assets/img/img_happypoint_app.jpg';
 import monthly from '../assets/img/img_monthly_fom_220429.png';
+import { useCallback, useState } from 'react';
 
 const MenuContainer = styled.nav`
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
   height: 46px;
   border-top: 1px solid #e2d9d6;
   .menu__inner {
@@ -14,12 +24,19 @@ const MenuContainer = styled.nav`
       overflow: hidden;
       position: absolute;
       top: 185px;
+      max-height: 0;
       left: 0;
       height: 275px;
       z-index: 99;
       min-width: 100%;
-      border-bottom: 1px solid #693337;
       background-color: #fff;
+      transition: all 500ms ease;
+      border-bottom: 1px solid black;
+
+      &.open {
+        max-height: 275px;
+        border-top: 1px solid black;
+      }
 
       div {
         max-width: 1200px;
@@ -64,6 +81,18 @@ const MenuContainer = styled.nav`
       float: right;
       z-index: 1000;
       position: relative;
+
+      &.open .gnb_sub {
+        height: auto;
+        span {
+          opacity: 1;
+        }
+        img {
+          display: block;
+          animation: fadeIn 500ms ease 300ms;
+          animation-fill-mode: forwards;
+        }
+      }
 
       .gnb_main span {
         display: block;
@@ -120,6 +149,8 @@ const MenuContainer = styled.nav`
 
     .gnb_sub {
       font-size: 14px;
+      overflow: hidden;
+      height: 0px;
 
       li {
         float: none;
@@ -134,15 +165,27 @@ const MenuContainer = styled.nav`
         color: #948780;
         cursor: pointer;
         z-index: 100 !important;
-
+        opacity: 0;
+        transition: all 400ms ease-in;
         &:hover {
           color: #ff75ac;
         }
+      }
+
+      img {
+        display: none;
+        opacity: 0;
       }
     }
   }
 `;
 const Menu = () => {
+  const [isMouseOver, setIsMouseOver] = useState(false);
+
+  const handleOpacity = useCallback(() => {
+    setIsMouseOver((value) => !value);
+  }, []);
+
   return (
     <MenuContainer>
       <div className="menu__inner">
@@ -157,8 +200,8 @@ const Menu = () => {
           </ul>
         </nav>
 
-        <nav className="gnb">
-          <div className="gnb_wrap">
+        <nav className={`gnb ${isMouseOver ? 'open' : ''}`}>
+          <div className="gnb_wrap" onMouseOver={handleOpacity} onMouseOut={handleOpacity}>
             <ul>
               <li className="gnb_depth1"></li>
 
@@ -166,7 +209,7 @@ const Menu = () => {
                 <div className="gnb_main">
                   <span>FLAVOR OF THE MONTH</span>
                 </div>
-                <div class="gnb_sub">
+                <div className="gnb_sub">
                   <img src={monthly} alt="이달의 맛" style={{ marginLeft: '40px', cursor: 'pointer' }} />
                 </div>
               </li>
@@ -263,7 +306,7 @@ const Menu = () => {
             </ul>
           </div>
         </nav>
-        <div className="gnb_bg">
+        <div className={`gnb_bg ${isMouseOver ? 'open' : ''}`}>
           <div></div>
         </div>
       </div>

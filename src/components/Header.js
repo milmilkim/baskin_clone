@@ -9,7 +9,7 @@ import Menu from './Menu';
 
 const HeaderContainer = styled.header`
   border-top: 3px solid #ff7c98;
-  border-bottom: 1px solid #3f291a;
+
   background: url(${background}) 50% 0 repeat-x;
   height: 182px;
 
