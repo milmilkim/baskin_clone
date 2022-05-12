@@ -61,7 +61,7 @@ const Swipe = () => {
     (async () => {
       try {
         const res = await axios.get('/json/banners.json');
-        setData((data) => res.data.data);
+        setData(() => res.data.data);
       } catch (e) {
         console.error(e);
       }
