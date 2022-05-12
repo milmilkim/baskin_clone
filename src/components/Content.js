@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Content() {
-  return <div>Content</div>;
+  return <div style={{ marginTop: '6px', backgroundColor: 'yellow' }}>Content</div>;
 }
 
 export default Content;

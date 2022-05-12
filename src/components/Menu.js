@@ -5,20 +5,12 @@ import monthly from '../assets/img/img_monthly_fom_220429.png';
 import { useCallback, useState } from 'react';
 
 const MenuContainer = styled.nav`
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
   height: 46px;
   border-top: 1px solid #e2d9d6;
   .menu__inner {
     max-width: 1200px;
     margin: 0 auto;
+    overflow: hidden;
 
     .gnb_bg {
       overflow: hidden;
@@ -31,11 +23,11 @@ const MenuContainer = styled.nav`
       min-width: 100%;
       background-color: #fff;
       transition: all 500ms ease;
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid #3f291a;
 
       &.open {
         max-height: 275px;
-        border-top: 1px solid black;
+        border-top: 1px solid #3f291a;
       }
 
       div {
