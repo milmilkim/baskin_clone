@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
 import SiteList from "./SiteList";
@@ -177,26 +177,32 @@ function Footer() {
     {
       logo: happypoint,
       url: "https://www.happypointcard.com/page/main/index.spc",
+      alt: "해피포인트",
     },
     {
       logo: happymarket,
       url: "http://m.celectory.com/mobile/gift/recommend;jsessionid=b1u3EyZlWUboVCDk3Tp4wwXRsdcP3X27IXnlwT9C-oCizT08xoti!1679465537!-991451080?",
+      alt: "해피마켓",
     },
     {
       logo: spc_story,
       url: "http://www.spc.co.kr/contributionAll",
+      alt: "SPC스토리",
     },
     {
       logo: norton,
       url: "https://sealinfo.verisign.com/splash?form_file=fdf/splash.fdf&dn=WWW.BASKINROBBINS.CO.KR&lang=ko",
+      alt: "노튼",
     },
     {
       logo: ccm,
       url: "https://www.kca.go.kr/ccm/",
+      alt: "소비자중심경영인증",
     },
     {
       logo: ksa,
       url: "https://knqa.ksa.or.kr/knqa/2276/subview.do",
+      alt: "품질경쟁력우수기업",
     },
   ]);
 
@@ -211,16 +217,8 @@ function Footer() {
         {/* 하단 메뉴 */}
         <ul className="footer-nav flex-row">
           {footerMenu.map((v, i) => {
-            // 특정 메뉴 강조
-            if (v.name === "개인정보처리방침") {
-              return (
-                <li key={i} className="highlight">
-                  <a href={v.url}>{v.name}</a>
-                </li>
-              );
-            }
             return (
-              <li key={i}>
+              <li key={i} className={v.name === "개인정보처리방침" ? "highlight" : ""}>
                 <a href={v.url}>{v.name}</a>
               </li>
             );
@@ -235,8 +233,8 @@ function Footer() {
             {familySite.map((v, i) => {
               return (
                 <li key={i}>
-                  <a href={v.url}>
-                    <img src={v.logo} className="logo" />
+                  <a href={v.url} target="_blank" rel="noreferrer">
+                    <img src={v.logo} alt={v.alt} className="logo" />
                   </a>
                 </li>
               );
