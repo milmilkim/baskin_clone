@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
 import SiteList from "./SiteList";
@@ -211,16 +211,8 @@ function Footer() {
         {/* 하단 메뉴 */}
         <ul className="footer-nav flex-row">
           {footerMenu.map((v, i) => {
-            // 특정 메뉴 강조
-            if (v.name === "개인정보처리방침") {
-              return (
-                <li key={i} className="highlight">
-                  <a href={v.url}>{v.name}</a>
-                </li>
-              );
-            }
             return (
-              <li key={i}>
+              <li key={i} className={v.name === "개인정보처리방침" ? "highlight" : ""}>
                 <a href={v.url}>{v.name}</a>
               </li>
             );
