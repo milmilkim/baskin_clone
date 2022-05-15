@@ -3,14 +3,14 @@ import styled, { css } from "styled-components";
 
 import SiteList from "./SiteList";
 
-import ccm from "../assets/img/footer/btn_ccm_2.png";
-import happymarket from "../assets/img/footer/btn_happymarket.png";
-import happypoint from "../assets/img/footer/btn_happypoint.png";
-import ksa from "../assets/img/footer/btn_ksa.png";
-import norton from "../assets/img/footer/btn_norton.gif";
-import spc_story from "../assets/img/footer/btn_spc_story.png";
-import drop_down from "../assets/img/footer/family_size_off.png";
-import footer_logo from "../assets/img/footer/footer_logo.png";
+import ccm from "../assets/img/btn_ccm_2.png";
+import happymarket from "../assets/img/btn_happymarket.png";
+import happypoint from "../assets/img/btn_happypoint.png";
+import ksa from "../assets/img/btn_ksa.png";
+import norton from "../assets/img/btn_norton.gif";
+import spc_story from "../assets/img/btn_spc_story.png";
+import drop_down from "../assets/img/family_size_off.png";
+import footer_logo from "../assets/img/footer_logo.png";
 
 const mixinBtn = css`
   width: 150px;

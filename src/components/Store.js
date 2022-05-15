@@ -67,6 +67,7 @@ const Store = () => {
           titlealt="매장"
           contimg={store}
           contalt="주변매장찾기"
+          url="http://www.baskinrobbins.co.kr/store/map.php"
         />
         <StoreItem
           classname="sec-title"
@@ -74,6 +75,7 @@ const Store = () => {
           titlealt="해피오더"
           contimg={happyOrder}
           contalt="모바일주문배달"
+          url="http://www.baskinrobbins.co.kr/store/catering.php"
         />
         <StoreItem articlename="sns" titleimg={snsTit} titlealt="sns">
           <SNS size="big" />

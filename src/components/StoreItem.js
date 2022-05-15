@@ -6,6 +6,7 @@ const StoreItem = ({
   titlealt,
   contimg,
   contalt,
+  url,
   articlename = "",
   children,
 }) => {
@@ -14,7 +15,11 @@ const StoreItem = ({
       <h3 className={classname}>
         <img src={titleimg} alt={titlealt} />
       </h3>
-      {contimg && contalt && <img src={contimg} alt={contalt} />}
+      {contimg && contalt && (
+        <a href={url} target="_blank" rel="noreferrer">
+          <img src={contimg} alt={contalt} />
+        </a>
+      )}
       {children}
     </article>
   );
