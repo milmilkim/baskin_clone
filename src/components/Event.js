@@ -14,7 +14,7 @@ const EventContainer = styled.section`
   .inner {
     width: 1200px;
     margin: 0 auto;
-    padding-top: 70px;
+    padding: 70px 30px;
 
     h3 {
       text-align: center;
@@ -51,10 +51,13 @@ const EventContainer = styled.section`
 
 const StyledSwiper = styled(Swiper)`
   .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    vertical-align: middle;
     margin: 0 15px !important;
     &:hover {
-      background-color: #301d17;
       transition: all 0.1s;
+      background: #301d17;
       transform: scale(1.3);
     }
   }
