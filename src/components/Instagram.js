@@ -71,7 +71,7 @@ const Instagram = () => {
   useEffect(() => {
     (async () => {
       try {
-        const res = await axios.get('/json/instagram.json');
+        const res = await axios.get('./json/instagram.json');
         setData(() => res.data.data);
       } catch (e) {
         console.error(e);

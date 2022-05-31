@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-import axios from "axios";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import axios from 'axios';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper';
 
-import EventItem from "./EventItem";
+import EventItem from './EventItem';
 
-import eventTit from "../assets/img/h_event.png";
+import eventTit from '../assets/img/h_event.png';
 
-import "swiper/css";
+import 'swiper/css';
 
 const EventContainer = styled.section`
   .inner {
@@ -79,10 +79,10 @@ const Event = () => {
   useEffect(() => {
     (async () => {
       try {
-        const res = await axios.get("/json/event.json");
+        const res = await axios.get('./json/event.json');
         setEventList(res.data.event);
       } catch (e) {
-        alert("Ajax 연동 실패");
+        alert('Ajax 연동 실패');
       }
     })();
   }, []);
@@ -110,14 +110,7 @@ const Event = () => {
               let count = 1;
               return (
                 <SwiperSlide>
-                  <EventItem
-                    key={i}
-                    thumbnail={v.thumbnail}
-                    alt1={v.alt1}
-                    category={v.category}
-                    alt2={v.alt2}
-                    etc={v.etc}
-                  >
+                  <EventItem key={i} thumbnail={v.thumbnail} alt1={v.alt1} category={v.category} alt2={v.alt2} etc={v.etc}>
                     {v.title}
                   </EventItem>
                 </SwiperSlide>
