@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/baskin_clone/static/css/main.e61fcce9.css",
+    "main.js": "/baskin_clone/static/js/main.5b234be5.js",
+    "static/media/img_menu_list_220429.png": "/baskin_clone/static/media/img_menu_list_220429.ad47cd8de4b5cef71ce8.png",
+    "static/media/bg_menu.jpg": "/baskin_clone/static/media/bg_menu.238472c2e0f1b13b7eff.jpg",
+    "static/media/1714824579.jpg": "/baskin_clone/static/media/1714824579.6811f0b0ff7a17756566.jpg",
+    "static/media/bg_header.gif": "/baskin_clone/static/media/bg_header.8a36715b0752ee6564c6.gif",
+    "static/media/img_monthly_fom_220429.png": "/baskin_clone/static/media/img_monthly_fom_220429.15702fb3a06ca0661bb4.png",
+    "static/media/img_happyorder_delivery.png": "/baskin_clone/static/media/img_happyorder_delivery.8b7e4ccda5584387c3d2.png",
+    "static/media/img_store.jpg": "/baskin_clone/static/media/img_store.fc9759a2f71145e06334.jpg",
+    "static/media/btn_ccm_2.png": "/baskin_clone/static/media/btn_ccm_2.0d6a1c5b20e62a7d9624.png",
+    "static/media/img_happypoint_app.jpg": "/baskin_clone/static/media/img_happypoint_app.24e415cde43e98fe35bd.jpg",
+    "index.html": "/baskin_clone/index.html",
+    "main.e61fcce9.css.map": "/baskin_clone/static/css/main.e61fcce9.css.map",
+    "main.5b234be5.js.map": "/baskin_clone/static/js/main.5b234be5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e61fcce9.css",
+    "static/js/main.5b234be5.js"
+  ]
+}
