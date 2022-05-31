@@ -2,63 +2,63 @@
   "data": [
     {
       "id": 1,
-      "url": "/instagram/1.jpg"
+      "url": "./instagram/1.jpg"
     },
     {
       "id": 2,
-      "url": "/instagram/2.jpg"
+      "url": "./instagram/2.jpg"
     },
     {
       "id": 3,
-      "url": "/instagram/3.jpg"
+      "url": "./instagram/3.jpg"
     },
     {
       "id": 4,
-      "url": "/instagram/4.jpg"
+      "url": "./instagram/4.jpg"
     },
     {
       "id": 5,
-      "url": "/instagram/5.jpg"
+      "url": "./instagram/5.jpg"
     },
     {
       "id": 6,
-      "url": "/instagram/6.jpg"
+      "url": "./instagram/6.jpg"
     },
     {
       "id": 7,
-      "url": "/instagram/7.jpg"
+      "url": "./instagram/7.jpg"
     },
     {
       "id": 8,
-      "url": "/instagram/8.jpg"
+      "url": "./instagram/8.jpg"
     },
     {
       "id": 9,
-      "url": "/instagram/9.jpg"
+      "url": "./instagram/9.jpg"
     },
     {
       "id": 10,
-      "url": "/instagram/10.jpg"
+      "url": "./instagram/10.jpg"
     },
     {
       "id": 11,
-      "url": "/instagram/11.jpg"
+      "url": "./instagram/11.jpg"
     },
     {
       "id": 12,
-      "url": "/instagram/12.jpg"
+      "url": "./instagram/12.jpg"
     },
     {
       "id": 13,
-      "url": "/instagram/13.jpg"
+      "url": "./instagram/13.jpg"
     },
     {
       "id": 14,
-      "url": "/instagram/14.jpg"
+      "url": "./instagram/14.jpg"
     },
     {
       "id": 15,
-      "url": "/instagram/15.jpg"
+      "url": "./instagram/15.jpg"
     }
   ]
 }
